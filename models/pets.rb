@@ -16,6 +16,14 @@ class Pet
         pet = SqlRunner.run(sql).first
         @id = pet['id']
     end
+    
+    def pet_store
+        sql= "SELECT * FROM pet_stores WHERE id = #{@pet_store_id}"
+        pet_store = SqlRunner.run(sql).first
+        return PetStore.new( pet_store ) 
+    end
+
+
 
 
 end
