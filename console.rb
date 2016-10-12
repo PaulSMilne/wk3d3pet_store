@@ -23,7 +23,8 @@ pet5.save()
 pet4.name = "Dory"
 pet5.type = "hamster"
 pet4.update
-# pet5.update
+pet5.update
+pet3.delete
 
 
 

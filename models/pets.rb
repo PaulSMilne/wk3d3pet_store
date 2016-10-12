@@ -31,7 +31,13 @@ class Pet
             pet_store_id = #{@pet_store_id} 
         WHERE id = #{@id}"
         SqlRunner.run(sql)
-        end
+    end
+
+    def delete
+        sql = "DELETE FROM pets where id = #{@id}"
+        SqlRunner.run(sql)
+    end
+
 
 
 
