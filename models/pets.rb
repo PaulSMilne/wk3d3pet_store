@@ -1,5 +1,6 @@
 require ('pg')
 require_relative('../db/sql_runner')
+# require('pry-byebug')
 
 class Pet
 
@@ -38,8 +39,17 @@ class Pet
         SqlRunner.run(sql)
     end
 
+    def self.all
+        sql = "SELECT * FROM pets"
+        all_pets = SqlRunner.run(sql).map {|pet| Pet.new(pet)}
+        return all_pets
+    end
 
+    def self.find_pet_by_id(pet_id)
+        Pet.all.find {|pet| pet.id == pet_id}
+    end
 
-
-
+    # binding.pry
 end
+# Pet.all
+
