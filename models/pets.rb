@@ -48,8 +48,4 @@ class Pet
     def self.find_pet_by_id(pet_id)
         Pet.all.find {|pet| pet.id == pet_id}
     end
-
-    # binding.pry
 end
-# Pet.all
-

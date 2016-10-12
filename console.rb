@@ -26,10 +26,6 @@ pet4.update
 pet5.update
 pet3.delete
 
-
-
-
-
 binding.pry
 
 nil
