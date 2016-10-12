@@ -1,3 +1,4 @@
+require ('pg')
 require_relative('../db/sql_runner')
 
 class Pet
@@ -27,11 +28,10 @@ class Pet
         sql ="UPDATE pets SET
             name = '#{@name}', 
             type = '#{@type}',
-            @pet_store_id = #{pet_store_id},
+            pet_store_id = #{@pet_store_id} 
         WHERE id = #{@id}"
-        db.exec(sql)
-        db.close
-    end
+        SqlRunner.run(sql)
+        end
 
 
 
